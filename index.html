@@ -8,6 +8,66 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+  .role-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width : 100%;
+    
+}
+
+.role {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    margin-bottom: 20px;
+    width: 100%;
+
+}
+
+.role-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height:400px;
+}
+
+/* Ensure the image is on the right side */
+.role-description img {
+    max-width: 45%;
+    height:100%;
+
+}
+
+/* Style the text content */
+.role-description .text-content {
+    flex: 1;
+   
+    max-width: 55%;
+}
+
+/* Style the role title */
+.role-description .role-title {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+
+.role-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Animation when the role is in the viewport */
+.role.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
@@ -23,15 +83,26 @@ body, html {
   background-size: cover;
 }
 
+/* Create a Parallax Effect */
+.text-centered {
+  text-align: center;
+}
+
+.flex-center{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/w3images/parallax1.jpg');
+  background-image: url('/media/photoshopTry1.png');
   min-height: 100%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("/w3images/parallax2.jpg");
+  background-image: url("/media/cover.jpeg");
   min-height: 400px;
 }
 
@@ -82,113 +153,121 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">MY <span class="w3-hide-small">WEBSITE</span> LOGO</span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Miguel <span class="w3-hide-small">Menard</span></span>
   </div>
 </div>
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <div class="w3-row">
+  <h3 class="w3-center">Who am I</h3>
+  <p class="w3-center text-center"><em>Compare to sone character</em></p>
+  <p>I'm Miguel, and I'm on a mission to better the world, all the while enjoying everything life has to offer.
+    With a heart full of passion and energy to spare, I dive headfirst into challenges, ready to innovate and collaborate to 
+    create meaningful solutions. I am currently searching for a 12 month long Co-Op work term starting during the summer of 2025.</p>
+  <div class="w3-row flex-center">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="/w3images/avatar_hat.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Miguel Ménard</b></p><br>
+      <img src="media/me.jpeg" class="w3-round w3-image" alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-col text-centered m6 w3-hide-small w3-padding-large">
+      <p>
+        I am 21 years old and go to the University of British Columbia in Vancouver.<br><br>
+        I will be entering my third year of computer engineering in the fall of 2024, and am super excited to have access to my first machine learning courses, I have grown quite obsessed with how cool AI is and have been seeking to indulge myself further on this subject.<br><br>
+        I have always been extremely passionate about the power of artificail intelligence, espcially when it comes to its applications in the medical field now, and in the near future. Most recently this has lead me to be very invested in the ground breaking discoveries happening in the Brain-computer interface sector. <br><br>
+        I am also a very active and social person. 
+
+      </p>
     </div>
   </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+  <p class="w3-large w3-center w3-padding-16">Where does my time go:</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Studying</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">50%</div>
   </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Partying</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">40%</div>
   </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Sleeping</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:10%">10%</div>
   </div>
 </div>
 
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">14+</span><br>
-    Partners
+    <span class="w3-xlarge">3rd</span><br>
+    Year in Computer Eng.
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Projects Done
+    <span class="w3-xlarge">2</span><br>
+    Coops Done
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
+    <span class="w3-xlarge">3.3 </span><br>
+    Accumulated GPA
   </div>
   <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">150+</span><br>
-    Meetings
+    <span class="w3-xlarge">5</span><br>
+    Different University Roles Filled
   </div>
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
-    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">Student Life and Engagements </span>
   </div>
 </div>
 
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
-  <h3 class="w3-center">MY WORK</h3>
-  <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them bigger</em></p><br>
+  <p class="w3-center"><em>I am of the belief that the most important lessons I have learnt at university are not from the schooling itself, but from the roles I lead to make UBC an amazing campus.<br> From helping new first year students accomodate to their first experiencs at UBC to managing the finances of the Sigma Phi Delat Fraternity, here are some of the various roles I have taken to lead people to enjoy their limited time in university</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-  <div class="w3-row-padding w3-center">
-    <div class="w3-col m3">
-      <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist over the mountains">
+  <div class="role-container">
+    <div class="role">
+      <div class="role-description">
+          
+          <div class="text-content">
+              <div class="role-title">ECESS Stud Lyfe</div>
+                <p>Since the start of 2024, I have been in charge of organizing different events for the Electrical and Computer Engineering Student Society (ECESS). <br><br>
+                This role encompasses different events such as stress relief getherings for students with animal therapy, an end of year gala, hackathons, parties, and more to keep my community engaged.</p>
+              
+          </div>
+          <img src="./media/ece.jpg" alt="ECESS", style="margin-left:20px;">
+      </div>
     </div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Coffee beans">
+    <div class="role">
+      <div class="role-description">
+          <img src="./media/cover.jpeg" alt="SPD", style="margin-right:20px;">
+          <div class="text-content">
+              <div class="role-title">Sigma Phi Delta VP Finance</div>
+                <p>One of the more 'crazy' things I have joined at UBC is the Engineering fraternity Sigma Phi Delta <br><br>
+                Whilst some people heavily disfavor fraternities, this group of people has taught me some of my most valuable life lessons. It is through SPD that I have gotten all of my other roles up to this date due to their heavy engagement in the prosperity of engineering student life at UBC <br> <br>
+                Back when I first joined in 2023, I decided to take on the role of VP Finance where I lead the budget in one of the most succesful years this fraternity has seen yet</p>
+              
+          </div>
+      </div>
     </div>
 
-    <div class="w3-col m3">
-      <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Bear closeup">
+    <div class="role">
+      <div class="role-description">
+          
+          <div class="text-content">
+              <div class="role-title">EUS E^0 Director</div>
+                <p>In the upcoming 2024 Fall I am embarking on a new challenge where I will be the Director of E^0 events for the EUS <br><br>
+                E^0 is UBC's versin of first year integration on campus where we organize a multitude of events to engage the first years in the engineering community. We run different events like Imagine Day where UBC clubs open day booths in the middle of campus allowing them to explore their interests</p>
+              
+          </div>
+          <img src="./media/ece.jpg" alt="ECESS", style="margin-left:20px;">
+      </div>
     </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Quiet ocean">
-    </div>
-  </div>
-
-  <div class="w3-row-padding w3-center w3-section">
-    <div class="w3-col m3">
-      <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="The mist">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My beloved typewriter">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
-    </div>
-
-    <div class="w3-col m3">
-      <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
-    </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-  </div>
+      
+ 
 </div>
 
 <!-- Modal for full size images on click-->
@@ -209,18 +288,18 @@ body, html {
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
+  <h3 class="w3-center">FPGA Intern<br>I am currently working at Matrox Video for SUMMER 2024</h3>
   <p class="w3-center"><em>I'd love your feedback!</em></p>
 
   <div class="w3-row w3-padding-32 w3-section">
     <div class="w3-col m4 w3-container">
-      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+      <img src="/media/image.png" class="w3-image w3-round" style="width:100%">
     </div>
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Montreal, CA<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +1 (438) 969-7782<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: miguel.menard@me.com<br>
       </div>
       <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
       <form action="/action_page.php" target="_blank">
@@ -243,19 +322,43 @@ body, html {
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Back Up</a>
   <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
  
 <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const roles = document.querySelectorAll('.role');
+
+    const isInViewport = function(elem) {
+        const bounding = elem.getBoundingClientRect();
+        return (
+            bounding.top >= 0 &&
+            bounding.left >= 0 &&
+            bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    };
+
+    const run = function() {
+        roles.forEach(role => {
+            if (isInViewport(role)) {
+                role.classList.add('in-view');
+            } else {
+                role.classList.remove('in-view');
+            }
+        });
+    };
+
+    // Events
+    window.addEventListener('load', run);
+    window.addEventListener('resize', run);
+    window.addEventListener('scroll', run);
+});
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
